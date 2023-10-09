@@ -8,7 +8,7 @@ import ru.netology.data.*;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class Test {
+public class TestDiplom {
     Description tour;
     Page card;
 
@@ -30,6 +30,7 @@ public class Test {
         card = tour.chooseCardPayment();
     }
 
+    @org.junit.jupiter.api.Test
     @DisplayName("Поля заполнены валидными значениями и номером карты APPROVED")
     void shouldBeSuccessfulTourCard() {
         card.pay(DataHelper.cardNumberApproved());
