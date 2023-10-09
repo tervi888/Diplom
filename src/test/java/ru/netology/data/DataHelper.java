@@ -7,31 +7,35 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class DataHelper {
-private DataHelper() {
-}
-    public static String getApprovedCardNumber() {return ("1111 2222 3333 4444");}
+    private DataHelper() {
+    }
+
+    public static String getApprovedCardNumber() {
+        return ("1111 2222 3333 4444");
+    }
+
     public static String getDeclinedCardNumber() {
         return ("5555 6666 7777 8888");
     }
 
     public static String getShiftedMonth() {
-        return LocalDate.now().format(DateTimeFormatter.ofPattern("MM"));
+        return LocalDate.now().format(DateTimeFormatter.ofPattern("mm"));
     }
 
     public static String getExpiredMonth() {
-        return LocalDate.now().minusMonths(1).format(DateTimeFormatter.ofPattern("MM"));
+        return LocalDate.now().minusMonths(1).format(DateTimeFormatter.ofPattern("mm"));
     }
 
     public static String getShiftedYear() {
-        return LocalDate.now().format(DateTimeFormatter.ofPattern("YY"));
+        return LocalDate.now().format(DateTimeFormatter.ofPattern("yy"));
     }
 
     public static String getUppedExpiredYear() {
-        return LocalDate.now().plusYears(6).format(DateTimeFormatter.ofPattern("YY"));
+        return LocalDate.now().plusYears(6).format(DateTimeFormatter.ofPattern("yy"));
     }
 
     public static String getLowerExpiredYear() {
-        return LocalDate.now().minusYears(1).format(DateTimeFormatter.ofPattern("YY"));
+        return LocalDate.now().minusYears(1).format(DateTimeFormatter.ofPattern("yy"));
     }
 
     public static Card cardNumberApproved() {
@@ -241,7 +245,6 @@ private DataHelper() {
 
     public static Card lettersCyrillicYear() {
         Faker faker = new Faker(new Locale("en"));
-        ;
         String cardNumber = getApprovedCardNumber();
         String holder = faker.name().firstName() + " " + faker.name().lastName();
         String month = getShiftedMonth();
@@ -318,7 +321,6 @@ private DataHelper() {
     }
 
 
-
     public static Card emptyCVV() {
         Faker faker = new Faker(new Locale("en"));
         String cardNumber = getApprovedCardNumber();
@@ -346,6 +348,7 @@ private DataHelper() {
         String year = getShiftedYear();
         return new Card(cardNumber, month, year, holder, "qwerty");
     }
+
     public static Card getLettersCyrillicCVV() {
         Faker faker = new Faker(new Locale("en"));
         String cardNumber = getApprovedCardNumber();
@@ -354,6 +357,7 @@ private DataHelper() {
         String year = getShiftedYear();
         return new Card(cardNumber, month, year, holder, "нетология");
     }
+
     public static Card getSymbolsCVV() {
         Faker faker = new Faker(new Locale("en"));
         String cardNumber = getApprovedCardNumber();
