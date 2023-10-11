@@ -25,6 +25,8 @@ public class Page {
         cvc.setValue(data.getCvv());
         button.click();
     }
+
+
     public void approved() {
         SelenideElement successfulNotification = $(".notification_status_ok .notification__content")
                 .shouldHave(text("Операция одобрена Банком."), Duration.ofSeconds(20));

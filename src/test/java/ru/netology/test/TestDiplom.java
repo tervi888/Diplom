@@ -28,6 +28,7 @@ public class TestDiplom {
         open("http://localhost:8080");
         tour = new Description();
         card = tour.chooseCardPayment();
+        
     }
 
     @org.junit.jupiter.api.Test
@@ -38,6 +39,7 @@ public class TestDiplom {
         Payment entity = SQLHelper.paymentEntity();
         Assertions.assertEquals("APPROVED", entity.getStatus());
     }
+
 
     @org.junit.jupiter.api.Test
     @DisplayName("Поля заполнены валидными значениями и номером карты DECLINED")
