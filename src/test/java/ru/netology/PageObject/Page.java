@@ -1,6 +1,7 @@
-package ru.netology.data;
+package ru.netology.PageObject;
 
 import com.codeborne.selenide.SelenideElement;
+import ru.netology.data.Card;
 
 import java.time.Duration;
 
@@ -12,12 +13,12 @@ public class Page {
     private final SelenideElement cardNumber = $("input[placeholder='0000 0000 0000 0000']");
     private final SelenideElement month = $("input[placeholder='08']");
     private final SelenideElement year = $("input[placeholder='22']");
-    private final SelenideElement owner =  $$(".input").find(exactText("Владелец")).$(".input__control");
+    private final SelenideElement owner = $$(".input").find(exactText("Владелец")).$(".input__control");
     private final SelenideElement cvc = $("[placeholder='999']");
     private final SelenideElement button = $$(".button").find(exactText("Продолжить"));
 
 
-    public void pay(Card data){
+    public void pay(Card data) {
         cardNumber.setValue(data.getNumber());
         month.setValue(data.getMonth());
         year.setValue(data.getYear());

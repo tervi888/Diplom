@@ -40,6 +40,7 @@ public class SQLHelper {
         runner.execute(conn, sql1);
         runner.execute(conn, sql2);
     }
+
     @SneakyThrows
     public static void assertDbEmpty() {
         String sql = "Select count(*) from credit_request_entity;";

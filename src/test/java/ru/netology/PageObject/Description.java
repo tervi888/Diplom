@@ -1,4 +1,4 @@
-package ru.netology.data;
+package ru.netology.PageObject;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.SneakyThrows;

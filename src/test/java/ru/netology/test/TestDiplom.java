@@ -3,6 +3,8 @@ package ru.netology.test;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
+import ru.netology.PageObject.Description;
+import ru.netology.PageObject.Page;
 import ru.netology.data.*;
 
 
@@ -28,7 +30,7 @@ public class TestDiplom {
         open("http://localhost:8080");
         tour = new Description();
         card = tour.chooseCardPayment();
-        
+
     }
 
     @org.junit.jupiter.api.Test
@@ -164,7 +166,7 @@ public class TestDiplom {
 
     @org.junit.jupiter.api.Test
     @DisplayName("Отправка формы со значением в поле Месяц истекшего по срокам месяц")
-     void submitFormShouldGetPreviousMonth() {
+    void submitFormShouldGetPreviousMonth() {
         card.pay(DataHelper.getPreviousMonth());
         card.wrongValidityNotification();
         SQLHelper.assertDbEmpty();
