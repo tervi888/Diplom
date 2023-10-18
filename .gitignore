@@ -2,9 +2,7 @@ Thumbs.db*
 .DS_Store
 HELP.md
 .gradle
-.allure
 build/
-!/
 
 ### STS ###
 .apt_generated
