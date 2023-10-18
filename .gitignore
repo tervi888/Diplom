@@ -5,7 +5,7 @@ HELP.md
 .allure
 build/
 !/
-.idea
+.idea/
 
 ### STS ###
 .apt_generated
